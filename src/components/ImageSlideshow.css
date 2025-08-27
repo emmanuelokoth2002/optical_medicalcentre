@@ -9,9 +9,41 @@
 	background: #0f172a;
 }
 
+/* Animated gradient border glow */
+.slideshow::before {
+	content: '';
+	position: absolute;
+	inset: -2px;
+	border-radius: inherit;
+	background: conic-gradient(from 0deg, rgba(139,92,246,0.5), rgba(56,189,248,0.5), rgba(16,185,129,0.5), rgba(139,92,246,0.5));
+	filter: blur(8px);
+	opacity: 0.6;
+	animation: spinGradient 16s linear infinite;
+	-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+	-webkit-mask-composite: xor;
+	mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+	mask-composite: exclude;
+	padding: 2px;
+	pointer-events: none;
+}
+
+@keyframes spinGradient {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
 .slides {
 	position: absolute;
 	inset: 0;
+}
+
+/* Soft top/bottom gradient overlay for depth */
+.slides::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(15,23,42,0.35) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(15,23,42,0.35) 100%);
+	pointer-events: none;
 }
 
 .slide {
@@ -24,11 +56,42 @@
 	filter: brightness(0.85) saturate(1.05);
 	transition:
 		opacity 900ms ease,
-		transform 4800ms ease;
+		transform 5200ms ease;
 	/* Curved reveal mask */
 	-webkit-mask-image: radial-gradient(120% 80% at 50% 40%, #000 60%, transparent 70%);
 	mask-image: radial-gradient(120% 80% at 50% 40%, #000 60%, transparent 70%);
 }
+
+/* Ensure the current slide is visible */
+.slide.is-active { opacity: 1; }
+
+/* Subtle cinematic motion effects */
+@keyframes kb-zoom-pan {
+	0% { transform: scale(1.05) translate3d(0px, 0px, 0); }
+	100% { transform: scale(1.15) translate3d(-10px, -6px, 0); }
+}
+@keyframes panR {
+	0% { transform: scale(1.06) translateX(-12px); }
+	100% { transform: scale(1.06) translateX(12px); }
+}
+@keyframes panL {
+	0% { transform: scale(1.06) translateX(12px); }
+	100% { transform: scale(1.06) translateX(-12px); }
+}
+@keyframes zoomOut {
+	0% { transform: scale(1.14); }
+	100% { transform: scale(1.02); }
+}
+
+/* Apply effects only to the top visible image layer for sharpness */
+.slide.is-active.effect-kenburns .img-layer.full { animation: kb-zoom-pan 16s ease forwards; }
+.slide.is-active.effect-pan-right .img-layer.full { animation: panR 14s ease-in-out forwards; }
+.slide.is-active.effect-pan-left .img-layer.full { animation: panL 14s ease-in-out forwards; }
+.slide.is-active.effect-zoom-out .img-layer.full { animation: zoomOut 15s ease forwards; }
+
+/* Crossfade between previous and next for smoothness */
+.slide.is-prev .img-layer.full { opacity: 1; }
+.slide.is-prev { opacity: 0; transition: opacity 900ms ease; }
 
 /* New layered backgrounds for blur-up */
 .img-layer {
@@ -55,6 +118,26 @@
 	opacity: 1;
 }
 
+/* Glass caption overlay */
+.caption {
+	position: absolute;
+	left: 16px;
+	bottom: 16px;
+	max-width: min(520px, 70%);
+	background: rgba(15, 23, 42, 0.45);
+	backdrop-filter: blur(8px);
+	border: 1px solid rgba(255,255,255,0.12);
+	border-radius: 12px;
+	padding: 14px 16px;
+	color: #e5e7eb;
+	opacity: 0;
+	transform: translateY(8px);
+	transition: opacity 420ms ease, transform 420ms ease;
+}
+.caption.is-visible { opacity: 1; transform: translateY(0); }
+.caption-title { font-size: 1.0625rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.caption-desc { font-size: 0.9375rem; line-height: 1.4; color: #e5e7eb; }
+
 /* Soft vignette for cinematic feel */
 .vignette {
 	pointer-events: none;
@@ -75,11 +158,12 @@
 	background: rgba(255,255,255,0.15);
 	backdrop-filter: blur(6px);
 	cursor: pointer;
-	transition: background 200ms ease, transform 200ms ease;
+	box-shadow: 0 8px 24px rgba(2,6,23,0.35);
+	transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
 	z-index: 2;
 }
 
-.nav:hover { background: rgba(255,255,255,0.25); transform: translateY(-50%) scale(1.05); }
+.nav:hover { background: rgba(255,255,255,0.28); transform: translateY(-50%) scale(1.06); box-shadow: 0 10px 28px rgba(2,6,23,0.45); }
 .nav:active { transform: translateY(-50%) scale(0.98); }
 
 .nav.prev { left: 12px; }
@@ -108,7 +192,7 @@
 	bottom: 12px;
 	transform: translateX(-50%);
 	display: flex;
-	gap: 8px;
+	gap: 10px;
 	z-index: 2;
 }
 
@@ -118,12 +202,16 @@
 	border-radius: 999px;
 	border: none;
 	background: rgba(255,255,255,0.35);
+	box-shadow: 0 2px 10px rgba(0,0,0,0.25);
 	cursor: pointer;
-	transition: background 200ms ease, transform 200ms ease;
+	transition: background 220ms ease, transform 220ms ease, width 350ms ease;
 }
 
 .dot:hover { transform: scale(1.15); }
-.dot.is-active { background: rgba(255,255,255,0.95); }
+.dot.is-active {
+	background: rgba(255,255,255,0.95);
+	width: 22px;
+}
 
 /* Responsive height adjustments */
 @media (max-width: 1024px) {

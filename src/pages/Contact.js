@@ -266,7 +266,7 @@ const Contact = () => {
                   <MapPin className="map-icon" />
                   <h3>Our Location</h3>
                   <p>123 Vision Street, Optical District</p>
-                  <p>City, State 12345</p>
+                  <p>Kisumu, Kenya</p>
                   <div className="map-actions">
                     <button className="btn btn-secondary">Get Directions</button>
                     <button className="btn btn-secondary">View on Map</button>

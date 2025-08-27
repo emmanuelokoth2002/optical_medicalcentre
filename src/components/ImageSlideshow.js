@@ -3,6 +3,7 @@ import './ImageSlideshow.css';
 
 function ImageSlideshow({ images, intervalMs = 4500, className = '' }) {
 	const [activeIndex, setActiveIndex] = useState(0);
+	const [prevIndex, setPrevIndex] = useState(null);
 	const [loadedSet, setLoadedSet] = useState(() => new Set());
 	const timerRef = useRef(null);
 	const containerRef = useRef(null);
@@ -25,7 +26,11 @@ function ImageSlideshow({ images, intervalMs = 4500, className = '' }) {
 			clearInterval(timerRef.current);
 			timerRef.current = setInterval(() => {
 				if (!isHoveredRef.current) {
-					setActiveIndex((prev) => (prev + 1) % normalizedImages.length);
+					setActiveIndex((prev) => {
+						const next = (prev + 1) % normalizedImages.length;
+						setPrevIndex(prev);
+						return next;
+					});
 				}
 			}, intervalMs);
 		};
@@ -64,6 +69,7 @@ function ImageSlideshow({ images, intervalMs = 4500, className = '' }) {
 
 	const goTo = (index) => {
 		if (normalizedImages.length === 0) return;
+		setPrevIndex(activeIndex);
 		setActiveIndex(((index % normalizedImages.length) + normalizedImages.length) % normalizedImages.length);
 	};
 
@@ -91,6 +97,10 @@ function ImageSlideshow({ images, intervalMs = 4500, className = '' }) {
 	};
 	const onTouchEnd = () => { touchStartXRef.current = null; };
 
+	// Rotate subtle effects per slide
+	const effects = useMemo(() => ['kenburns', 'pan-right', 'pan-left', 'zoom-out'], []);
+	const effectFor = (index) => effects[index % effects.length];
+
 	return (
 		<div
 			className={`slideshow ${className}`}
@@ -109,11 +119,12 @@ function ImageSlideshow({ images, intervalMs = 4500, className = '' }) {
 			<div className="slides">
 				{normalizedImages.map((item, index) => {
 					const isActive = index === activeIndex;
+					const isPrev = index === prevIndex;
 					const isLoaded = loadedSet.has(index);
 					return (
 						<div
 							key={(item.src || '') + index}
-							className={`slide ${isActive ? 'is-active' : 'is-inactive'}`}
+							className={`slide ${isActive ? 'is-active' : 'is-inactive'} ${isPrev ? 'is-prev' : ''} effect-${effectFor(index)}`}
 							aria-hidden={!isActive}
 						>
 							<div
@@ -124,6 +135,12 @@ function ImageSlideshow({ images, intervalMs = 4500, className = '' }) {
 								className={`img-layer full ${isLoaded ? 'is-visible' : ''}`}
 								style={{ backgroundImage: `url(${item.src})` }}
 							/>
+							{(item.title || item.description) && (
+								<div className={`caption ${isActive ? 'is-visible' : ''}`} role="group" aria-roledescription="slide caption">
+									{item.title && <div className="caption-title">{item.title}</div>}
+									{item.description && <div className="caption-desc">{item.description}</div>}
+								</div>
+							)}
 						</div>
 					);
 				})}

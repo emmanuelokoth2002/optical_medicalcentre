@@ -68,10 +68,9 @@ const Home = () => {
   ];
 
   const heroImages = [
-    { src: process.env.PUBLIC_URL + '/images/home/hero-1.jpg', placeholder: process.env.PUBLIC_URL + '/images/home/hero-1-blur.jpg' },
-    { src: process.env.PUBLIC_URL + '/images/home/hero-2.jpg', placeholder: process.env.PUBLIC_URL + '/images/home/hero-2-blur.jpg' },
-    { src: process.env.PUBLIC_URL + '/images/home/hero-3.jpg', placeholder: process.env.PUBLIC_URL + '/images/home/hero-3-blur.jpg' },
-    { src: process.env.PUBLIC_URL + '/images/home/hero-4.jpg', placeholder: process.env.PUBLIC_URL + '/images/home/hero-4-blur.jpg' }
+    { src: process.env.PUBLIC_URL + '/images/home/hero-1.jpg', title: 'World-Class Eye Care', description: 'Advanced diagnostics and compassionate professionals for your family\'s vision.' },
+    { src: process.env.PUBLIC_URL + '/images/home/hero-2.jpg', title: 'Premium Eyewear', description: 'Designer frames and cutting-edge lenses tailored for you.' },
+    { src: process.env.PUBLIC_URL + '/images/home/hero-3.jpg', title: 'Clearer Vision Awaits', description: 'From exams to treatment, we\'re with you every step.' },
   ];
 
   return (
