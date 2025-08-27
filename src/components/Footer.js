@@ -114,7 +114,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <div className="footer-bottom-content">
             <p className="footer-copyright">
-              © {currentYear} EyeSight Pro. All rights reserved.
+              © {currentYear} EYE SIGHT OPTICAL AND MEDICAL CENTER LTD. All rights reserved.
             </p>
             <div className="footer-bottom-links">
               <Link to="/privacy">Privacy Policy</Link>
