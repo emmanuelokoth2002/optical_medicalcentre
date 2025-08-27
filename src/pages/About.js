@@ -80,22 +80,22 @@ const About = () => {
   const partners = [
     {
       name: "Avenue Hospital Kisumu",
-      logo: process.env.PUBLIC_URL + '/images/partners/visioncare.svg',
+      logo: process.env.PUBLIC_URL + '/images/partners/kisumuavenue.png',
       url: 'https://example.com'
     },
     {
       name: "Jaramogi Oginga Odinga Teaching and referral Hospital Eye Clinic",
-      logo: process.env.PUBLIC_URL + '/images/partners/clearsight.svg',
+      logo: process.env.PUBLIC_URL + '/images/partners/jaramogihospital.jiff',
       url: 'https://example.com'
     },
     {
       name: "Kisumu District Hospital",
-      logo: process.env.PUBLIC_URL + '/images/partners/optitech.svg',
+      logo: process.env.PUBLIC_URL + '/images/partners/kisumudistricthospital.png',
       url: 'https://example.com'
     },
     {
       name: "Sabatia Eye Hospital",
-      logo: process.env.PUBLIC_URL + '/images/partners/frameworks.svg',
+      logo: process.env.PUBLIC_URL + '/images/partners/sabatiaeye.jiff',
       url: 'https://example.com'
     }
   ];
