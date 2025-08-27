@@ -65,16 +65,14 @@ const Contact = () => {
       title: "Call Us",
       details: [
         "Main: +254 727864012",
-        "Emergency: +254 727864012"
+        "Secondary: +254 715888505"
       ]
     },
     {
       icon: <Mail className="contact-icon" />,
       title: "Email Us",
       details: [
-        "info@eyesightpro.com",
-        "appointments@eyesightpro.com",
-        "support@eyesightpro.com"
+        "eyesightopticalmedicalltd@gmail.com",
       ]
     },
     {

@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/optical_medicalcentre/static/css/main.70f7e226.css",
-    "main.js": "/optical_medicalcentre/static/js/main.ec9e697e.js",
+    "main.js": "/optical_medicalcentre/static/js/main.699034ea.js",
     "index.html": "/optical_medicalcentre/index.html",
     "main.70f7e226.css.map": "/optical_medicalcentre/static/css/main.70f7e226.css.map",
-    "main.ec9e697e.js.map": "/optical_medicalcentre/static/js/main.ec9e697e.js.map"
+    "main.699034ea.js.map": "/optical_medicalcentre/static/js/main.699034ea.js.map"
   },
   "entrypoints": [
     "static/css/main.70f7e226.css",
-    "static/js/main.ec9e697e.js"
+    "static/js/main.699034ea.js"
   ]
 }

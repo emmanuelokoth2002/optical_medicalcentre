@@ -29,7 +29,7 @@ const Footer = () => {
           <div className="footer-section">
             <div className="footer-brand">
               <Eye className="footer-brand-icon" />
-              <span className="footer-brand-name">EyeSight Pro</span>
+              <span className="footer-brand-name"> EYE SIGHT OPTICAL AND MEDICAL CENTER LTD</span>
             </div>
             <p className="footer-description">
               Your trusted partner for comprehensive eye care. We combine advanced technology 
@@ -81,21 +81,21 @@ const Footer = () => {
                 <div>
                   <p>123 Vision Street</p>
                   <p>Optical District</p>
-                  <p>City, State 12345</p>
+                  <p>Kisumu, Kenya</p>
                 </div>
               </div>
               <div className="contact-item">
                 <Phone className="contact-icon" />
                 <div>
                   <p>Main: +254 727864012</p>
-                  <p>Emergency: +254 727864012</p>
+                  <p>Secondary: +254 715888505</p>
                 </div>
               </div>
               <div className="contact-item">
                 <Mail className="contact-icon" />
                 <div>
-                  <p>info@eyesightpro.com</p>
-                  <p>appointments@eyesightpro.com</p>
+                  {/* <p>appointments@eyesightpro.com</p> */}
+                  <p>eyesightopticalmedicalltd@gmail.com</p>
                 </div>
               </div>
               <div className="contact-item">

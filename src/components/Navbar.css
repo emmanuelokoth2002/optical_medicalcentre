@@ -47,7 +47,6 @@
   color: var(--primary-color);
   text-decoration: none;
   transition: all 0.3s ease;
-  flex-shrink: 0;
 }
 
 .navbar-brand:hover {
@@ -171,8 +170,13 @@
 
 /* Ensure key groups are flex-aligned explicitly */
 .navbar-brand { display: flex; align-items: center; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.1; min-width: 0; }
+.brand-text span { white-space: normal; }
 .navbar-menu { display: flex; align-items: center; }
 .navbar-contact { display: flex; align-items: center; }
+
+/* Allow brand text to wrap inside its column while icon stays beside */
+.navbar-brand { flex-wrap: nowrap; }
 
 /* Mobile Styles */
 @media (max-width: 768px) {

@@ -120,7 +120,10 @@ const Navbar = () => {
       <div className="container">
         <Link to="/" className="navbar-brand" onClick={closeMenu}>
           <Eye className="brand-icon" />
-          <span>EYE OPTICAL CENTER.</span>
+          <div className="brand-text">
+            <span>EYE SIGHT OPTICAL</span>
+            <span>& MEDICAL CENTER LTD</span>
+          </div>
         </Link>
 
         <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>
