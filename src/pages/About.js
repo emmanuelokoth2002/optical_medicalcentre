@@ -79,22 +79,22 @@ const About = () => {
   // Partnerships – add, remove, or edit partners here
   const partners = [
     {
-      name: "VisionCare Labs",
+      name: "Avenue Hospital Kisumu",
       logo: process.env.PUBLIC_URL + '/images/partners/visioncare.svg',
       url: 'https://example.com'
     },
     {
-      name: "ClearSight Lenses",
+      name: "Jaramogi Oginga Odinga Teaching and referral Hospital Eye Clinic",
       logo: process.env.PUBLIC_URL + '/images/partners/clearsight.svg',
       url: 'https://example.com'
     },
     {
-      name: "OptiTech Diagnostics",
+      name: "Kisumu District Hospital",
       logo: process.env.PUBLIC_URL + '/images/partners/optitech.svg',
       url: 'https://example.com'
     },
     {
-      name: "FrameWorks",
+      name: "Sabatia Eye Hospital",
       logo: process.env.PUBLIC_URL + '/images/partners/frameworks.svg',
       url: 'https://example.com'
     }
