@@ -95,6 +95,12 @@ const Contact = () => {
     "Computer Vision Syndrome"
   ];
 
+  // Google Maps URLs for the clinic
+  const mapsAddress = '123 Vision Street, Optical District, Kisumu, Kenya';
+  const mapsQuery = encodeURIComponent(mapsAddress);
+  const mapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
+  const mapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${mapsQuery}`;
+
   return (
     <div className="contact-page">
       {/* Hero Section */}
@@ -268,8 +274,8 @@ const Contact = () => {
                   <p>123 Vision Street, Optical District</p>
                   <p>Kisumu, Kenya</p>
                   <div className="map-actions">
-                    <button className="btn btn-secondary">Get Directions</button>
-                    <button className="btn btn-secondary">View on Map</button>
+                    <a className="btn btn-secondary" href={mapsDirectionsUrl} target="_blank" rel="noopener noreferrer">Get Directions</a>
+                    <a className="btn btn-secondary" href={mapsPlaceUrl} target="_blank" rel="noopener noreferrer">View on Map</a>
                   </div>
                 </div>
               </div>
