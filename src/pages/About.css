@@ -284,6 +284,48 @@
 }
 
 /* Achievements Section */
+.partnerships-section {
+  background: var(--background-white);
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  background: var(--background-light);
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-4px);
+  background: var(--background-white);
+  box-shadow: var(--shadow-md);
+}
+
+.partner-logo {
+  width: 120px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.partner-logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.partner-initials { font-weight: 800; color: var(--primary-color); font-size: 1.25rem; }
+.partner-name { font-weight: 600; color: var(--text-primary); text-align: center; }
+
 .achievements-section {
   background: var(--background-white);
 }

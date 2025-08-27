@@ -76,6 +76,30 @@ const About = () => {
     "Continued Education Leaders"
   ];
 
+  // Partnerships – add, remove, or edit partners here
+  const partners = [
+    {
+      name: "VisionCare Labs",
+      logo: process.env.PUBLIC_URL + '/images/partners/visioncare.svg',
+      url: 'https://example.com'
+    },
+    {
+      name: "ClearSight Lenses",
+      logo: process.env.PUBLIC_URL + '/images/partners/clearsight.svg',
+      url: 'https://example.com'
+    },
+    {
+      name: "OptiTech Diagnostics",
+      logo: process.env.PUBLIC_URL + '/images/partners/optitech.svg',
+      url: 'https://example.com'
+    },
+    {
+      name: "FrameWorks",
+      logo: process.env.PUBLIC_URL + '/images/partners/frameworks.svg',
+      url: 'https://example.com'
+    }
+  ];
+
   return (
     <div className="about-page">
       {/* Hero Section */}
@@ -291,6 +315,42 @@ const About = () => {
                 </div>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Partnerships Section */}
+      <section className="section partnerships-section">
+        <div className="container">
+          <h2 className="section-title">Our Trusted Partners</h2>
+          <p className="section-subtitle">
+            We collaborate with leading organizations to deliver outstanding eye care solutions
+          </p>
+          <div className="partners-grid">
+            {partners.map((partner, index) => (
+              <motion.a
+                key={index}
+                className="partner-card"
+                href={partner.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                title={partner.name}
+              >
+                <div className="partner-logo" aria-label={partner.name}>
+                  {/* If logo missing, fallback to initials */}
+                  {partner.logo ? (
+                    <img src={partner.logo} alt={partner.name} />
+                  ) : (
+                    <span className="partner-initials">{partner.name.split(' ').map(w => w[0]).join('').slice(0,3)}</span>
+                  )}
+                </div>
+                <div className="partner-name">{partner.name}</div>
+              </motion.a>
+            ))}
           </div>
         </div>
       </section>
