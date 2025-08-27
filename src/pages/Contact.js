@@ -95,11 +95,11 @@ const Contact = () => {
     "Computer Vision Syndrome"
   ];
 
-  // Google Maps URLs for the clinic
-  const mapsAddress = '123 Vision Street, Optical District, Kisumu, Kenya';
-  const mapsQuery = encodeURIComponent(mapsAddress);
-  const mapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query=${mapsQuery}`;
-  const mapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${mapsQuery}`;
+  // Google Maps URLs for the clinic (Place ID preferred)
+  // Replace with your real Place ID from Google Maps
+  const placeId = 'ChIJAAAAAAAAAAAAAAAAAAAAAAA';
+  const mapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query_place_id=${placeId}`;
+  const mapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination_place_id=${placeId}`;
 
   return (
     <div className="contact-page">
