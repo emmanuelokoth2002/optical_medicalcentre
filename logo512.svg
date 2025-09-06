@@ -1,0 +1,19 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" rx="64" fill="#2563eb"/>
+  
+  <!-- Eye shape -->
+  <ellipse cx="256" cy="180" rx="96" ry="64" fill="#ffffff"/>
+  
+  <!-- Pupil -->
+  <circle cx="256" cy="180" r="40" fill="#1e40af"/>
+  
+  <!-- Highlight -->
+  <circle cx="280" cy="168" r="16" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Company name -->
+  <text x="256" y="320" font-family="Arial, sans-serif" font-size="42" font-weight="bold" text-anchor="middle" fill="#ffffff">EYE SIGHT</text>
+  <text x="256" y="370" font-family="Arial, sans-serif" font-size="32" font-weight="normal" text-anchor="middle" fill="#ffffff">OPTICAL</text>
+  <text x="256" y="410" font-family="Arial, sans-serif" font-size="28" font-weight="normal" text-anchor="middle" fill="#ffffff">MEDICAL CENTER</text>
+  <text x="256" y="450" font-family="Arial, sans-serif" font-size="20" font-weight="normal" text-anchor="middle" fill="#ffffff">LTD</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Eye shape -->
+  <ellipse cx="32" cy="32" rx="24" ry="16" fill="#2563eb" stroke="#1d4ed8" stroke-width="2"/>
+  
+  <!-- Pupil -->
+  <circle cx="32" cy="32" r="8" fill="#1e40af"/>
+  
+  <!-- Highlight -->
+  <circle cx="36" cy="28" r="3" fill="#ffffff" opacity="0.8"/>
+  
+  <!-- Eyelashes -->
+  <path d="M8 20 Q12 16 16 20" stroke="#1d4ed8" stroke-width="2" fill="none"/>
+  <path d="M8 24 Q12 20 16 24" stroke="#1d4ed8" stroke-width="2" fill="none"/>
+  <path d="M8 28 Q12 24 16 28" stroke="#1d4ed8" stroke-width="2" fill="none"/>
+  
+  <path d="M48 20 Q44 16 40 20" stroke="#1d4ed8" stroke-width="2" fill="none"/>
+  <path d="M48 24 Q44 20 40 24" stroke="#1d4ed8" stroke-width="2" fill="none"/>
+  <path d="M48 28 Q44 24 40 28" stroke="#1d4ed8" stroke-width="2" fill="none"/>
+</svg>
