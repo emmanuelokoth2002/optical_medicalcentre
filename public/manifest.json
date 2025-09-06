@@ -1,6 +1,6 @@
 {
-  "short_name": "EYE SIGHT OPTICAL",
-  "name": "EYE SIGHT OPTICAL AND MEDICAL CENTRE LTD",
+  "short_name": "Eye Sight Optical",
+  "name": "Eye Sight Optical and Medical Center Ltd.",
   "description": "Leading optical health and wellness provider in the Lake Region. Quality eye care, eyeglasses, contact lenses, and medical services.",
   "icons": [
     {
@@ -21,7 +21,7 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#2563eb",
   "background_color": "#ffffff",
   "categories": ["medical", "health", "business"],
   "lang": "en",

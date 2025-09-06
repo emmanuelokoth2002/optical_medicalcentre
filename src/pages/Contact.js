@@ -55,8 +55,7 @@ const Contact = () => {
       icon: <MapPin className="contact-icon" />,
       title: "Visit Us",
       details: [
-        "123 Vision Street",
-        "Optical District",
+        "P.O. Box 2803 – 40100",
         "KISUMU, KENYA"
       ]
     },
@@ -271,7 +270,7 @@ const Contact = () => {
                 <div className="map-content">
                   <MapPin className="map-icon" />
                   <h3>Our Location</h3>
-                  <p>123 Vision Street, Optical District</p>
+                  <p>P.O. Box 2803 – 40100</p>
                   <p>Kisumu, Kenya</p>
                   <div className="map-actions">
                     <a className="btn btn-secondary" href={mapsDirectionsUrl} target="_blank" rel="noopener noreferrer">Get Directions</a>
@@ -312,7 +311,7 @@ const Contact = () => {
               viewport={{ once: true }}
             >
               <h3>How do I schedule an appointment?</h3>
-              <p>You can schedule an appointment by calling us at (555) 123-4567, using our online booking system, or filling out the contact form above.</p>
+              <p>You can schedule an appointment by calling us at +254 727864012, using our online booking system, or filling out the contact form above.</p>
             </motion.div>
             <motion.div
               className="faq-item"

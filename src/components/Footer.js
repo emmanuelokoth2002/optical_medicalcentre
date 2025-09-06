@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
-  Eye, 
   MapPin, 
   Phone, 
   Mail, 
@@ -12,6 +11,7 @@ import {
   Linkedin,
   ArrowUp
 } from 'lucide-react';
+import Logo from './Logo';
 import './Footer.css';
 
 const Footer = () => {
@@ -27,10 +27,9 @@ const Footer = () => {
         {/* Main Footer Content */}
         <div className="footer-main">
           <div className="footer-section">
-            <div className="footer-brand">
-              <Eye className="footer-brand-icon" />
-              <span className="footer-brand-name"> EYE SIGHT OPTICAL AND MEDICAL CENTER LTD</span>
-            </div>
+            {/* <div className="footer-brand">
+              <Logo size="large" showText={true} />
+            </div> */}
             <p className="footer-description">
               Your trusted partner for comprehensive eye care. We combine advanced technology 
               with compassionate care to ensure optimal vision health for you and your family.
@@ -79,8 +78,7 @@ const Footer = () => {
               <div className="contact-item">
                 <MapPin className="contact-icon" />
                 <div>
-                  <p>123 Vision Street</p>
-                  <p>Optical District</p>
+                  <p>P.O. Box 2803 – 40100</p>
                   <p>Kisumu, Kenya</p>
                 </div>
               </div>

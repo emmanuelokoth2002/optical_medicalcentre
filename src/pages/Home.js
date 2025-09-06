@@ -43,7 +43,7 @@ const Home = () => {
     {
       name: "Sarah Atieno",
       role: "Patient",
-      text: "The team at EyeSight Pro is exceptional! They made my eye exam comfortable and explained everything clearly.",
+      text: "The team at Eye Sight Optical and Medical Center is exceptional! They made my eye exam comfortable and explained everything clearly.",
       rating: 5
     },
     {
@@ -119,7 +119,7 @@ const Home = () => {
       {/* Features Section */}
       <section className="section features-section">
         <div className="container">
-          <h2 className="section-title">Why Choose EyeSight Pro?</h2>
+          <h2 className="section-title">Why Choose Eye Sight Optical and Medical Center?</h2>
           <p className="section-subtitle">
             We combine expertise, technology, and compassion to deliver exceptional eye care
           </p>

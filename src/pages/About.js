@@ -111,7 +111,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="about-hero-content"
           >
-            <h1 className="about-hero-title">About EYE SIGHT OPTICAL AND MEDICAL CENTER LTD.</h1>
+            <h1 className="about-hero-title">About Eye Sight Optical and Medical Center Ltd.</h1>
             <p className="about-hero-subtitle">
               Dedicated to preserving and enhancing your precious gift of sight through 
               advanced technology, expert care, and compassionate service
@@ -269,7 +269,7 @@ const About = () => {
                   <div className="timeline-year">1998</div>
                   <div className="timeline-content">
                     <h3>Foundation</h3>
-                    <p>EyeSight Pro was established with a vision to provide exceptional eye care</p>
+                    <p>Eye Sight Optical and Medical Center Ltd. was established with a vision to provide exceptional eye care</p>
                   </div>
                 </div>
                 <div className="timeline-item">

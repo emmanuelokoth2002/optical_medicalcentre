@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Eye, Phone, Volume2, VolumeX, ChevronRight } from 'lucide-react';
+import { Menu, X, Phone, Volume2, VolumeX, ChevronRight } from 'lucide-react';
+import Logo from './Logo';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -119,11 +120,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <Link to="/" className="navbar-brand" onClick={closeMenu}>
-          <Eye className="brand-icon" />
-          <div className="brand-text">
-            <span>EYE SIGHT OPTICAL</span>
-            <span>& MEDICAL CENTER LTD</span>
-          </div>
+          <Logo size="medium" showText={true} />
         </Link>
 
         <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>

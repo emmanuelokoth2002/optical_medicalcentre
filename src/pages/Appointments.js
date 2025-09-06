@@ -125,7 +125,7 @@ const Appointments = () => {
       {/* Benefits Section */}
       <section className="section benefits-section">
         <div className="container">
-          <h2 className="section-title">Why Choose EyeSight Pro?</h2>
+          <h2 className="section-title">Why Choose Eye Sight Optical and Medical Center?</h2>
           <p className="section-subtitle">
             Experience the difference of professional, compassionate eye care
           </p>
@@ -373,11 +373,11 @@ const Appointments = () => {
                 <div className="contact-methods">
                   <div className="contact-method">
                     <Phone className="contact-method-icon" />
-                    <span>(555) 123-4567</span>
+                    <span>+254 727864012</span>
                   </div>
                   <div className="contact-method">
                     <Mail className="contact-method-icon" />
-                    <span>appointments@eyesightpro.com</span>
+                    <span>eyesightopticalmedicalltd@gmail.com</span>
                   </div>
                 </div>
               </div>

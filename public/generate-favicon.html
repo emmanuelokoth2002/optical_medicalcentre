@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Favicon</title>
+</head>
+<body>
+    <h2>Favicon Generator</h2>
+    <p>This page contains the favicon as a canvas element. You can right-click and save as favicon.ico</p>
+    
+    <canvas id="favicon" width="32" height="32" style="border: 1px solid #ccc; image-rendering: pixelated;"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('favicon');
+        const ctx = canvas.getContext('2d');
+        
+        // Background
+        ctx.fillStyle = '#2563eb';
+        ctx.fillRect(0, 0, 32, 32);
+        
+        // Eye shape
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.ellipse(16, 12, 6, 4, 0, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Pupil
+        ctx.fillStyle = '#1e40af';
+        ctx.beginPath();
+        ctx.arc(16, 12, 2.5, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Highlight
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.arc(17.5, 10.5, 1, 0, 2 * Math.PI);
+        ctx.fill();
+        
+        // Company initials
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 6px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText('ES', 16, 24);
+    </script>
+    
+    <p><strong>Instructions:</strong></p>
+    <ol>
+        <li>Right-click on the canvas above</li>
+        <li>Select "Save image as..."</li>
+        <li>Save as "favicon.ico" in the public folder</li>
+    </ol>
+</body>
+</html>
