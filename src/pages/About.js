@@ -36,36 +36,20 @@ const About = () => {
     }
   ];
 
-  const team = [
-    {
-      name: "Dr. Sarah Johnson",
-      role: "Chief Optometrist",
-      experience: "15+ years",
-      specialty: "Pediatric Eye Care",
-      image: "👩‍⚕️"
-    },
-    {
-      name: "Dr. Michael Chen",
-      role: "Senior Optometrist",
-      experience: "12+ years",
-      specialty: "Advanced Imaging",
-      image: "👨‍⚕️"
-    },
-    {
-      name: "Dr. Emily Rodriguez",
-      role: "Optometrist",
-      experience: "8+ years",
-      specialty: "Contact Lenses",
-      image: "👩‍⚕️"
-    },
-    {
-      name: "Dr. James Wilson",
-      role: "Optometrist",
-      experience: "10+ years",
-      specialty: "Low Vision",
-      image: "👨‍⚕️"
-    }
-  ];
+  const director = {
+    name: "Dr. Gordon",
+    role: "Director & Chief Optometrist",
+    experience: "20+ years",
+    specialty: "Comprehensive Eye Care & Vision Therapy",
+    image: "👨‍⚕️",
+    testimonial: "With over two decades of experience in eye care, I am committed to providing exceptional vision health services to our community. Our mission is to ensure every patient receives personalized, professional care that enhances their quality of life through optimal vision health.",
+    qualifications: [
+      "Doctor of Optometry (OD)",
+      "Board Certified Optometrist",
+      "Specialist in Vision Therapy",
+      "Advanced Diagnostic Imaging Expert"
+    ]
+  };
 
   const achievements = [
     "Board Certified Optometrists",
@@ -214,40 +198,54 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="section team-section">
+      {/* Director Section */}
+      <section className="section director-section">
         <div className="container">
-          <h2 className="section-title">Meet Our Expert Team</h2>
+          <h2 className="section-title">Meet Our Director</h2>
           <p className="section-subtitle">
-            Experienced professionals dedicated to providing you with the best eye care
+            Leading our commitment to exceptional eye care with decades of experience
           </p>
-          <div className="grid grid-4">
-            {team.map((member, index) => (
-              <motion.div
-                key={index}
-                className="team-card card"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="team-avatar">
-                  <span className="avatar-emoji">{member.image}</span>
+          <div className="director-container">
+            <motion.div
+              className="director-card"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <div className="director-image">
+                <div className="director-avatar">
+                  <span className="avatar-emoji">{director.image}</span>
                 </div>
-                <h3 className="team-name">{member.name}</h3>
-                <p className="team-role">{member.role}</p>
-                <div className="team-details">
-                  <div className="team-experience">
+              </div>
+              <div className="director-content">
+                <h3 className="director-name">{director.name}</h3>
+                <p className="director-role">{director.role}</p>
+                <div className="director-details">
+                  <div className="director-experience">
                     <span className="detail-label">Experience:</span>
-                    <span className="detail-value">{member.experience}</span>
+                    <span className="detail-value">{director.experience}</span>
                   </div>
-                  <div className="team-specialty">
+                  <div className="director-specialty">
                     <span className="detail-label">Specialty:</span>
-                    <span className="detail-value">{member.specialty}</span>
+                    <span className="detail-value">{director.specialty}</span>
                   </div>
                 </div>
-              </motion.div>
-            ))}
+                <div className="director-qualifications">
+                  <h4>Professional Qualifications:</h4>
+                  <ul>
+                    {director.qualifications.map((qualification, index) => (
+                      <li key={index}>{qualification}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="director-testimonial">
+                  <blockquote>
+                    "{director.testimonial}"
+                  </blockquote>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -94,11 +94,9 @@ const Contact = () => {
     "Computer Vision Syndrome"
   ];
 
-  // Google Maps URLs for the clinic (Place ID preferred)
-  // Replace with your real Place ID from Google Maps
-  const placeId = 'ChIJAAAAAAAAAAAAAAAAAAAAAAA';
-  const mapsPlaceUrl = `https://www.google.com/maps/search/?api=1&query_place_id=${placeId}`;
-  const mapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination_place_id=${placeId}`;
+  // Google Maps URLs for the clinic
+  const mapsPlaceUrl = 'https://goo.gl/maps/b74ja2CGkT9ptzH98';
+  const mapsDirectionsUrl = 'https://goo.gl/maps/b74ja2CGkT9ptzH98';
 
   return (
     <div className="contact-page">
