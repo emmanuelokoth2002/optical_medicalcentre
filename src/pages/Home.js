@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import './Home.css';
 import ImageSlideshow from '../components/ImageSlideshow';
+import SEO from '../components/SEO';
 
 const Home = () => {
   const features = [
@@ -75,44 +76,41 @@ const Home = () => {
 
   return (
     <div className="home">
+      <SEO
+        title="Eye Sight Optical and Medical Center Ltd | Eye Care in Kisumu, Kenya"
+        description="Comprehensive eye care, eyeglasses, contact lenses, and medical eye services in Kisumu and the Lake Region, Kenya. Book your appointment today."
+        path="/"
+      />
       {/* Hero Section */}
       <section className="hero">
+        <div className="hero-media">
+          <ImageSlideshow images={heroImages} />
+        </div>
+        <div className="hero-scrim" />
         <div className="container">
-          <div className="hero-content">
-            <motion.div 
-              className="hero-text"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              <h1 className="hero-title">
-                Your Vision, Our <span className="highlight">Priority</span>
-              </h1>
-              <p className="hero-subtitle">
-                Experience world-class eye care with cutting-edge technology and compassionate professionals. 
-                We're dedicated to preserving and enhancing your precious gift of sight.
-              </p>
-              <div className="hero-buttons">
-                <Link to="/appointments" className="btn btn-primary">
-                  Book Appointment
-                  <ArrowRight className="btn-icon" />
-                </Link>
-                <Link to="/services" className="btn btn-secondary">
-                  Our Services
-                </Link>
-              </div>
-            </motion.div>
-            <motion.div 
-              className="hero-image"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <div className="hero-visual">
-                <ImageSlideshow images={heroImages} />
-              </div>
-            </motion.div>
-          </div>
+          <motion.div
+            className="hero-text"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="hero-title">
+              Your Vision, Our <span className="highlight">Priority</span>
+            </h1>
+            <p className="hero-subtitle">
+              Experience world-class eye care with cutting-edge technology and compassionate professionals.
+              We're dedicated to preserving and enhancing your precious gift of sight.
+            </p>
+            <div className="hero-buttons">
+              <Link to="/appointments" className="btn btn-primary">
+                Book Appointment
+                <ArrowRight className="btn-icon" />
+              </Link>
+              <Link to="/services" className="btn btn-secondary">
+                Our Services
+              </Link>
+            </div>
+          </motion.div>
         </div>
       </section>
 

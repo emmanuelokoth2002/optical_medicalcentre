@@ -1,23 +1,24 @@
 /* Appointments Hero */
 .appointments-hero {
-  padding: 8rem 0 4rem;
-  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
-  color: white;
+  padding: 9rem 0 4rem;
+  background: var(--background-charcoal);
+  color: var(--background-light);
   text-align: center;
 }
 
 .appointments-hero-title {
+  font-family: var(--font-serif);
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .appointments-hero-subtitle {
-  font-size: 1.25rem;
-  opacity: 0.9;
+  font-size: 1.125rem;
+  opacity: 0.75;
   max-width: 700px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* Benefits Section */
@@ -32,9 +33,10 @@
 }
 
 .benefit-icon-wrapper {
-  width: 80px;
-  height: 80px;
-  background: var(--gradient-primary);
+  width: 72px;
+  height: 72px;
+  background: var(--background-light);
+  border: 1px solid var(--border-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -43,14 +45,15 @@
 }
 
 .benefit-icon {
-  width: 40px;
-  height: 40px;
-  color: white;
+  width: 32px;
+  height: 32px;
+  color: var(--primary-color);
 }
 
 .benefit-title {
+  font-family: var(--font-serif);
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1rem;
   color: var(--text-primary);
 }
@@ -96,9 +99,10 @@
 .form-group textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 2px solid var(--border-color);
-  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
   font-size: 1rem;
+  font-family: var(--font-sans);
   transition: all 0.3s ease;
   background: var(--background-white);
 }
@@ -108,7 +112,7 @@
 .form-group textarea:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 0 0 3px rgba(124, 148, 115, 0.15);
 }
 
 .form-group textarea {
@@ -154,9 +158,10 @@
 
 .appointment-info-card {
   background: var(--background-white);
-  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
   padding: 2rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .appointment-info-card h3 {
@@ -201,9 +206,10 @@
 
 .appointment-reminders {
   background: var(--background-white);
-  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
   padding: 2rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .appointment-reminders h3 {
@@ -240,9 +246,10 @@
 
 .appointment-contact {
   background: var(--background-white);
-  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
   padding: 2rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .appointment-contact h3 {
@@ -295,8 +302,9 @@
 }
 
 .appointments-cta-title {
+  font-family: var(--font-serif);
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 

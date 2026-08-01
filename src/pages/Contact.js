@@ -10,6 +10,7 @@ import {
   AlertCircle
 } from 'lucide-react';
 import './Contact.css';
+import SEO from '../components/SEO';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -100,6 +101,11 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
+      <SEO
+        title="Contact Us | Eye Sight Optical and Medical Center Ltd"
+        description="Get in touch with Eye Sight Optical and Medical Center Ltd in Kisumu, Kenya. Find our location, phone numbers, email, and business hours."
+        path="/contact"
+      />
       {/* Hero Section */}
       <section className="contact-hero">
         <div className="container">

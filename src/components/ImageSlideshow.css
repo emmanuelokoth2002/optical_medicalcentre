@@ -3,33 +3,10 @@
 	width: 100%;
 	height: 60vh;
 	min-height: 380px;
-	border-radius: 1.25rem;
+	border-radius: 0.25rem;
 	overflow: hidden;
-	box-shadow: 0 20px 60px rgba(2, 6, 23, 0.2);
-	background: #0f172a;
-}
-
-/* Animated gradient border glow */
-.slideshow::before {
-	content: '';
-	position: absolute;
-	inset: -2px;
-	border-radius: inherit;
-	background: conic-gradient(from 0deg, rgba(139,92,246,0.5), rgba(56,189,248,0.5), rgba(16,185,129,0.5), rgba(139,92,246,0.5));
-	filter: blur(8px);
-	opacity: 0.6;
-	animation: spinGradient 16s linear infinite;
-	-webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-	-webkit-mask-composite: xor;
-	mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-	mask-composite: exclude;
-	padding: 2px;
-	pointer-events: none;
-}
-
-@keyframes spinGradient {
-	0% { transform: rotate(0deg); }
-	100% { transform: rotate(360deg); }
+	box-shadow: 0 20px 60px rgba(38, 34, 29, 0.25);
+	background: #26221D;
 }
 
 .slides {
@@ -37,12 +14,12 @@
 	inset: 0;
 }
 
-/* Soft top/bottom gradient overlay for depth */
+/* Soft grounding gradient at the base for depth, kept light to preserve image brightness */
 .slides::after {
 	content: '';
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(180deg, rgba(15,23,42,0.35) 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 80%, rgba(15,23,42,0.35) 100%);
+	background: linear-gradient(180deg, rgba(38,34,29,0) 75%, rgba(38,34,29,0.28) 100%);
 	pointer-events: none;
 }
 
@@ -53,45 +30,45 @@
 	background-position: center;
 	transform-origin: center;
 	opacity: 0;
-	filter: brightness(0.85) saturate(1.05);
-	transition:
-		opacity 900ms ease,
-		transform 5200ms ease;
-	/* Curved reveal mask */
-	-webkit-mask-image: radial-gradient(120% 80% at 50% 40%, #000 60%, transparent 70%);
-	mask-image: radial-gradient(120% 80% at 50% 40%, #000 60%, transparent 70%);
+	z-index: 0;
+	transition: opacity 1500ms cubic-bezier(0.45, 0, 0.2, 1);
 }
 
-/* Ensure the current slide is visible */
-.slide.is-active { opacity: 1; }
+/* Ensure the current slide is visible and stacks above the outgoing one */
+.slide.is-active { opacity: 1; z-index: 1; }
 
 /* Subtle cinematic motion effects */
 @keyframes kb-zoom-pan {
-	0% { transform: scale(1.05) translate3d(0px, 0px, 0); }
-	100% { transform: scale(1.15) translate3d(-10px, -6px, 0); }
+	0% { transform: scale(1.02) translate3d(0px, 0px, 0); }
+	100% { transform: scale(1.08) translate3d(-10px, -6px, 0); }
 }
 @keyframes panR {
-	0% { transform: scale(1.06) translateX(-12px); }
-	100% { transform: scale(1.06) translateX(12px); }
+	0% { transform: scale(1.04) translateX(-10px); }
+	100% { transform: scale(1.04) translateX(10px); }
 }
 @keyframes panL {
-	0% { transform: scale(1.06) translateX(12px); }
-	100% { transform: scale(1.06) translateX(-12px); }
+	0% { transform: scale(1.04) translateX(10px); }
+	100% { transform: scale(1.04) translateX(-10px); }
 }
 @keyframes zoomOut {
-	0% { transform: scale(1.14); }
-	100% { transform: scale(1.02); }
+	0% { transform: scale(1.08); }
+	100% { transform: scale(1.01); }
 }
 
-/* Apply effects only to the top visible image layer for sharpness */
-.slide.is-active.effect-kenburns .img-layer.full { animation: kb-zoom-pan 16s ease forwards; }
-.slide.is-active.effect-pan-right .img-layer.full { animation: panR 14s ease-in-out forwards; }
-.slide.is-active.effect-pan-left .img-layer.full { animation: panL 14s ease-in-out forwards; }
-.slide.is-active.effect-zoom-out .img-layer.full { animation: zoomOut 15s ease forwards; }
+/* Resting transform matches each effect's 0% keyframe so activation never "pops" */
+.slide.effect-kenburns .img-layer.full { transform: scale(1.02) translate3d(0px, 0px, 0); }
+.slide.effect-pan-right .img-layer.full { transform: scale(1.04) translateX(-10px); }
+.slide.effect-pan-left .img-layer.full { transform: scale(1.04) translateX(10px); }
+.slide.effect-zoom-out .img-layer.full { transform: scale(1.08); }
 
-/* Crossfade between previous and next for smoothness */
-.slide.is-prev .img-layer.full { opacity: 1; }
-.slide.is-prev { opacity: 0; transition: opacity 900ms ease; }
+/* Apply effects only to the top visible image layer for sharpness */
+.slide.is-active.effect-kenburns .img-layer.full { animation: kb-zoom-pan 7s ease-out forwards; }
+.slide.is-active.effect-pan-right .img-layer.full { animation: panR 7s ease-in-out forwards; }
+.slide.is-active.effect-pan-left .img-layer.full { animation: panL 7s ease-in-out forwards; }
+.slide.is-active.effect-zoom-out .img-layer.full { animation: zoomOut 7s ease-out forwards; }
+
+/* Outgoing slide stays fully painted while it fades, so the crossfade has no gap */
+.slide.is-prev { opacity: 0; z-index: 0; }
 
 /* New layered backgrounds for blur-up */
 .img-layer {
@@ -100,18 +77,18 @@
 	background-size: cover;
 	background-position: center;
 	will-change: opacity, filter, transform;
+	transition: transform 7s ease-out;
 }
 
 .img-layer.placeholder {
-	filter: blur(20px) saturate(1.1) brightness(0.9);
+	filter: blur(20px);
 	transform: scale(1.05);
 	opacity: 1;
-	transition: opacity 600ms ease;
 }
 
 .img-layer.full {
 	opacity: 0;
-	transition: opacity 600ms ease;
+	transition: opacity 500ms ease;
 }
 
 .img-layer.full.is-visible {
@@ -138,12 +115,12 @@
 .caption-title { font-size: 1.0625rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
 .caption-desc { font-size: 0.9375rem; line-height: 1.4; color: #e5e7eb; }
 
-/* Soft vignette for cinematic feel */
+/* Faint corner falloff for depth, subtle enough to preserve brightness */
 .vignette {
 	pointer-events: none;
 	position: absolute;
 	inset: 0;
-	background: radial-gradient(60% 50% at 50% 50%, rgba(0,0,0,0) 0%, rgba(2,6,23,0.35) 100%);
+	background: radial-gradient(85% 75% at 50% 45%, rgba(0,0,0,0) 55%, rgba(38,34,29,0.22) 100%);
 }
 
 /* Navigation arrows */

@@ -8,7 +8,7 @@ const Logo = ({
   className = '',
   onClick = null 
 }) => {
-  const logoPath = process.env.PUBLIC_URL + '/images/logo/eye-sight-logo.png';
+  const logoPath = process.env.PUBLIC_URL + '/images/logo/eye-sight-logo-icon.png';
   
   const handleClick = () => {
     if (onClick) {

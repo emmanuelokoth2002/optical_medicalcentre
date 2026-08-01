@@ -1,23 +1,24 @@
 /* Services Hero */
 .services-hero {
-  padding: 8rem 0 4rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  padding: 9rem 0 4rem;
+  background: var(--background-charcoal);
+  color: var(--background-light);
   text-align: center;
 }
 
 .services-hero-title {
+  font-family: var(--font-serif);
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .services-hero-subtitle {
-  font-size: 1.25rem;
-  opacity: 0.9;
+  font-size: 1.125rem;
+  opacity: 0.75;
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* Main Services Section */
@@ -34,9 +35,10 @@
 }
 
 .service-icon-wrapper {
-  width: 80px;
-  height: 80px;
-  background: var(--gradient-primary);
+  width: 72px;
+  height: 72px;
+  background: var(--background-light);
+  border: 1px solid var(--border-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -45,14 +47,15 @@
 }
 
 .service-icon {
-  width: 40px;
-  height: 40px;
-  color: white;
+  width: 32px;
+  height: 32px;
+  color: var(--primary-color);
 }
 
 .service-title {
+  font-family: var(--font-serif);
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1rem;
   color: var(--text-primary);
 }
@@ -92,7 +95,7 @@
 .check-icon {
   width: 1.25rem;
   height: 1.25rem;
-  color: #10b981;
+  color: var(--primary-color);
   flex-shrink: 0;
 }
 
@@ -103,13 +106,15 @@
   margin-bottom: 1.5rem;
   padding: 1rem;
   background: var(--background-light);
-  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
 }
 
 .service-price {
+  font-family: var(--font-serif);
   font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--primary-color);
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 .service-duration {
@@ -133,8 +138,8 @@
 }
 
 .specialized-service-icon-wrapper {
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   background: var(--gradient-secondary);
   border-radius: 50%;
   display: flex;
@@ -143,7 +148,12 @@
   margin: 0 auto 1rem;
 }
 
+.specialized-service-icon-wrapper .service-icon {
+  color: var(--secondary-color);
+}
+
 .specialized-service-title {
+  font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
@@ -182,13 +192,15 @@
   margin-bottom: 1rem;
   padding: 0.75rem;
   background: var(--background-light);
-  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
   transition: all 0.3s ease;
 }
 
 .technology-item:hover {
-  background: var(--primary-color);
-  color: white;
+  background: var(--text-primary);
+  border-color: var(--text-primary);
+  color: var(--background-light);
   transform: translateX(10px);
 }
 
@@ -219,8 +231,8 @@
 .tech-grid .tech-item {
   width: 120px;
   height: 120px;
-  background: var(--gradient-primary);
-  border-radius: 1rem;
+  background: var(--background-charcoal);
+  border-radius: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -250,8 +262,9 @@
 }
 
 .services-cta-title {
+  font-family: var(--font-serif);
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
@@ -295,7 +308,11 @@
 
   .services-cta-buttons {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+  }
+
+  .services-cta-buttons .btn {
+    justify-content: center;
   }
 
   .service-meta {

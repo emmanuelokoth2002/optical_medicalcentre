@@ -25,7 +25,7 @@
 }
 
 .logo-icon {
-  color: var(--primary-color, #2563eb);
+  color: var(--primary-color, #7C9473);
   transition: color 0.3s ease;
 }
 
@@ -36,24 +36,26 @@
 }
 
 .logo-primary {
-  font-weight: 700;
-  font-size: 1.1em;
-  color: var(--text-primary, #1f2937);
+  font-family: var(--font-serif, Georgia, serif);
+  font-weight: 600;
+  font-size: 1.15em;
+  color: var(--text-primary, #2B2823);
   letter-spacing: 0.5px;
 }
 
 .logo-secondary {
-  font-weight: 500;
-  font-size: 0.85em;
-  color: var(--text-secondary, #6b7280);
-  letter-spacing: 0.3px;
+  font-weight: 400;
+  font-size: 0.7em;
+  color: var(--text-secondary, #6F6A5E);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 /* Size variants */
 .logo.small .logo-img,
 .logo.small .logo-icon {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 }
 
 .logo.small .logo-primary {
@@ -66,14 +68,14 @@
 
 .logo.medium .logo-img,
 .logo.medium .logo-icon {
-  width: 32px;
-  height: 32px;
+  width: 52px;
+  height: 52px;
 }
 
 .logo.large .logo-img,
 .logo.large .logo-icon {
-  width: 48px;
-  height: 48px;
+  width: 68px;
+  height: 68px;
 }
 
 .logo.large .logo-primary {
@@ -86,8 +88,8 @@
 
 .logo.xlarge .logo-img,
 .logo.xlarge .logo-icon {
-  width: 64px;
-  height: 64px;
+  width: 84px;
+  height: 84px;
 }
 
 .logo.xlarge .logo-primary {
@@ -122,16 +124,22 @@
     font-size: 0.8em;
   }
   
+  .logo.medium .logo-img,
+  .logo.medium .logo-icon {
+    width: 44px;
+    height: 44px;
+  }
+
   .logo.large .logo-img,
   .logo.large .logo-icon {
-    width: 40px;
-    height: 40px;
+    width: 56px;
+    height: 56px;
   }
-  
+
   .logo.xlarge .logo-img,
   .logo.xlarge .logo-icon {
-    width: 48px;
-    height: 48px;
+    width: 64px;
+    height: 64px;
   }
 }
 

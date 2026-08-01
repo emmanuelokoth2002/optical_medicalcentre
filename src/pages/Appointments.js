@@ -12,6 +12,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import './Appointments.css';
+import SEO from '../components/SEO';
 
 const Appointments = () => {
   const [formData, setFormData] = useState({
@@ -104,6 +105,11 @@ const Appointments = () => {
 
   return (
     <div className="appointments-page">
+      <SEO
+        title="Book an Appointment | Eye Sight Optical and Medical Center Ltd"
+        description="Schedule your eye exam or consultation online with Eye Sight Optical and Medical Center Ltd in Kisumu, Kenya."
+        path="/appointments"
+      />
       {/* Hero Section */}
       <section className="appointments-hero">
         <div className="container">

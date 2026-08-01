@@ -11,6 +11,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 import './About.css';
+import SEO from '../components/SEO';
 
 const About = () => {
   const values = [
@@ -86,6 +87,11 @@ const About = () => {
 
   return (
     <div className="about-page">
+      <SEO
+        title="About Us | Eye Sight Optical and Medical Center Ltd"
+        description="Learn about Eye Sight Optical and Medical Center Ltd, our leadership, and our commitment to quality eye care in Kisumu and the Lake Region, Kenya."
+        path="/about"
+      />
       {/* Hero Section */}
       <section className="about-hero">
         <div className="container">

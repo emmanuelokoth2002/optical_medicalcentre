@@ -14,6 +14,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import './Services.css';
+import SEO from '../components/SEO';
 
 const Services = () => {
   const mainServices = [
@@ -28,7 +29,7 @@ const Services = () => {
         "Color vision testing",
         "Depth perception assessment"
       ],
-      price: "From Ksh",
+      // price: "From Ksh",
       duration: "45-60 minutes"
     },
     {
@@ -42,7 +43,7 @@ const Services = () => {
         "Blue light protection",
         "Contact lens fitting"
       ],
-      price: "From Ksh",
+      // price: "From Ksh",
       duration: "30-45 minutes"
     },
     {
@@ -56,7 +57,7 @@ const Services = () => {
         "Visual field testing",
         "Fundus photography"
       ],
-      price: "From Ksh",
+      // price: "From Ksh",
       duration: "20-30 minutes"
     }
   ];
@@ -95,6 +96,11 @@ const Services = () => {
 
   return (
     <div className="services-page">
+      <SEO
+        title="Our Services | Eye Sight Optical and Medical Center Ltd"
+        description="Comprehensive eye care services including eye exams, eyewear & contact lenses, and advanced imaging at Eye Sight Optical and Medical Center in Kisumu, Kenya."
+        path="/services"
+      />
       {/* Hero Section */}
       <section className="services-hero">
         <div className="container">

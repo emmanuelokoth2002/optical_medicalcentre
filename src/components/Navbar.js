@@ -148,8 +148,20 @@ const Navbar = () => {
             Services
             <ChevronRight className="mobile-arrow" />
           </Link>
-          <Link 
-            to="/about" 
+          <Link
+            to="/products"
+            className={`nav-link ${isActive('/products') ? 'active' : ''}`}
+            onClick={closeMenu}
+            onMouseEnter={onNavHover('Products')}
+            onFocus={onNavFocus('Products')}
+            onMouseLeave={onNavLeave}
+            onBlur={onNavLeave}
+          >
+            Products
+            <ChevronRight className="mobile-arrow" />
+          </Link>
+          <Link
+            to="/about"
             className={`nav-link ${isActive('/about') ? 'active' : ''}`}
             onClick={closeMenu}
             onMouseEnter={onNavHover('About')}

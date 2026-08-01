@@ -1,23 +1,24 @@
 /* About Hero */
 .about-hero {
-  padding: 8rem 0 4rem;
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-  color: white;
+  padding: 9rem 0 4rem;
+  background: var(--background-charcoal);
+  color: var(--background-light);
   text-align: center;
 }
 
 .about-hero-title {
+  font-family: var(--font-serif);
   font-size: 3.5rem;
-  font-weight: 800;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .about-hero-subtitle {
-  font-size: 1.25rem;
-  opacity: 0.9;
+  font-size: 1.125rem;
+  opacity: 0.75;
   max-width: 700px;
   margin: 0 auto;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* Mission & Vision Section */
@@ -58,8 +59,8 @@
 
 .highlight-item:hover,
 .goal-item:hover {
-  background: var(--primary-color);
-  color: white;
+  background: var(--text-primary);
+  color: var(--background-light);
   transform: translateX(10px);
 }
 
@@ -88,9 +89,10 @@
 }
 
 .value-icon-wrapper {
-  width: 80px;
-  height: 80px;
-  background: var(--gradient-primary);
+  width: 72px;
+  height: 72px;
+  background: var(--background-light);
+  border: 1px solid var(--border-color);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -99,14 +101,15 @@
 }
 
 .value-icon {
-  width: 40px;
-  height: 40px;
-  color: white;
+  width: 32px;
+  height: 32px;
+  color: var(--primary-color);
 }
 
 .value-title {
+  font-family: var(--font-serif);
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1rem;
   color: var(--text-primary);
 }
@@ -140,8 +143,9 @@
 }
 
 .team-name {
+  font-family: var(--font-serif);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.5rem;
   color: var(--text-primary);
 }
@@ -220,7 +224,7 @@
   height: 1rem;
   background: var(--primary-color);
   border-radius: 50%;
-  border: 3px solid white;
+  border: 3px solid var(--background-light);
   box-shadow: 0 0 0 3px var(--primary-color);
 }
 
@@ -228,17 +232,18 @@
   position: absolute;
   left: -4rem;
   top: 0;
-  background: var(--primary-color);
-  color: white;
+  background: var(--text-primary);
+  color: var(--background-light);
   padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
   font-size: 0.875rem;
   font-weight: 600;
 }
 
 .timeline-content h3 {
+  font-family: var(--font-serif);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.5rem;
   color: var(--text-primary);
 }
@@ -272,8 +277,9 @@
 }
 
 .achievement-number {
+  font-family: var(--font-serif);
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
@@ -347,8 +353,8 @@
 }
 
 .achievement-card:hover {
-  background: var(--primary-color);
-  color: white;
+  background: var(--text-primary);
+  color: var(--background-light);
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
 }
@@ -356,12 +362,12 @@
 .achievement-star {
   width: 1.5rem;
   height: 1.5rem;
-  color: #fbbf24;
+  color: var(--primary-color);
   flex-shrink: 0;
 }
 
 .achievement-card:hover .achievement-star {
-  color: white;
+  color: var(--background-light);
 }
 
 /* Responsive Design */
@@ -382,6 +388,7 @@
 
   .timeline {
     padding-left: 1.5rem;
+    text-align: left;
   }
 
   .timeline-item::before {
@@ -389,7 +396,9 @@
   }
 
   .timeline-year {
-    left: -3.5rem;
+    position: static;
+    display: inline-block;
+    margin-bottom: 0.5rem;
   }
 
   .achievement-stats {
@@ -429,7 +438,6 @@
   }
 
   .timeline-year {
-    left: -3rem;
     font-size: 0.75rem;
     padding: 0.2rem 0.5rem;
   }
@@ -447,9 +455,10 @@
 }
 
 .director-card {
-  background: white;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  background: var(--background-white);
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  box-shadow: var(--shadow-lg);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -465,11 +474,11 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6, #1e40af);
+  background: var(--gradient-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+  box-shadow: var(--shadow-md);
 }
 
 .avatar-emoji {
@@ -481,8 +490,9 @@
 }
 
 .director-name {
+  font-family: var(--font-serif);
   font-size: 2.5rem;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
